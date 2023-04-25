@@ -1,23 +1,10 @@
-import React from "react";
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { css, StyleSheet } from 'aphrodite';
 
-
-const styles = StyleSheet.create({
-  bodySection: {
-    marginTop: '10px',
-    width: '600px',
-    minWidth: '300px'
-  }
-})
-
-class BodySection extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+export default class BodySection extends Component {
   render() {
     return (
-      <div className={css(styles.bodySection)}>
+      <div className="bodySection">
         <h2>{this.props.title}</h2>
         {this.props.children}
       </div>
@@ -26,11 +13,10 @@ class BodySection extends React.Component {
 }
 
 BodySection.propTypes = {
-    title: PropTypes.string
+  title: PropTypes.string
 }
 
 BodySection.defaultProps = {
-    title: ''
+  title: ''
 }
 
-export default BodySection;
